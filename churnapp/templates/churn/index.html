@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" href="{% static 'churn\style.css' %}">
+</head>
+
+<body>
+
+    <h1>Customer Churn Prediction</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <select name="gender" required>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Senior Citizen -->
+        <label>Senior Citizen:</label>
+        <select name="SeniorCitizen" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Partner -->
+        <label>Partner:</label>
+        <select name="Partner" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Tenure -->
+        <label>Tenure (Months):</label>
+        <input type="number" name="tenure" required>
+
+        <br><br>
+
+
+        <!-- Phone Service -->
+        <label>Phone Service:</label>
+        <select name="PhoneService" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Internet Service -->
+        <label>Internet Service:</label>
+        <select name="InternetService">
+            <option value="0">Fiber optic</option>
+            <option value="1">DSL</option>
+            <option value="2">No</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Contract -->
+        <label>Contract:</label>
+        <select name="Contract" required>
+            <option value="0">Month-to-month</option>
+            <option value="1">One Year</option>
+            <option value="2">Two Year</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Paperless Billing -->
+        <label>Paperless Billing:</label>
+        <select name="PaperlessBilling">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Payment Method -->
+        <label>Payment Method:</label>
+        <select name="PaymentMethod" required>
+            <option value="0">Electronic Check</option>
+            <option value="1">Mailed Check</option>
+            <option value="2">Bank Transfer</option>
+            <option value="3">Credit Card</option>
+        </select>
+
+        <br><br>
+
+
+        <!-- Monthly Charges -->
+        <label>Monthly Charges:</label>
+        <input 
+            type="number" 
+            name="MonthlyCharges" 
+            step="0.01" 
+            required
+        >
+
+        <br><br>
+
+
+        <!-- Submit Button -->
+        <button type="submit">Predict Churn</button>
+
+    </form>
+
+
+    <!-- Prediction Result -->
+
+    {% if prediction %}
+        <hr>
+
+        <h2>Prediction Result:</h2>
+
+        <h3>{{ prediction }}</h3>
+
+    {% endif %}
+
+</body>
+</html>
