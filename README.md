@@ -58,3 +58,26 @@ git clone <your-repository-url>
 cd Customer-Churn-Prediction
 pip install -r requirements.txt
 python manage.py runserver
+
+## 📊 Dataset
+
+This project uses the **Telco Customer Churn Dataset**, which contains customer information and their churn status.
+
+The dataset includes information such as customer demographics, tenure, services, contract type, payment method, and monthly charges.
+
+## 📓 Google Colab Notebook
+
+The complete Machine Learning workflow is available in Google Colab, including data analysis, EDA, preprocessing, encoding, feature scaling, model training, and evaluation.
+
+🔗 **[Open Google Colab Notebook](https://colab.research.google.com/drive/1ARnsC_iddlXGZfxw7b4n40FPcxyXJJQI?usp=sharing)**
+
+The notebook covers:
+
+* Data loading and exploration
+* Exploratory Data Analysis (EDA)
+* Data preprocessing
+* Feature encoding
+* Feature scaling using StandardScaler
+* Model training
+* Model evaluation
+* Saving the trained model, scaler, and columns
