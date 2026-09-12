@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-jf2qvzkpp46k9#k)*2!@jbh$vs8%1*t#jm#=3^t!t3f5vlo$xn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'customer-churn-prediction-1-x7pq.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
