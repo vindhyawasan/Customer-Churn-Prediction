@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,11 +26,12 @@ SECRET_KEY = 'django-insecure-jf2qvzkpp46k9#k)*2!@jbh$vs8%1*t#jm#=3^t!t3f5vlo$xn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'customer-churn-prediction-1-x7pq.onrender.com',
-    'localhost',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = []
+
+if "RENDER_EXTERNAL_HOSTNAME" in os.environ:
+    ALLOWED_HOSTS.append(os.environ["RENDER_EXTERNAL_HOSTNAME"])
+
+ALLOWED_HOSTS += ["localhost", "127.0.0.1"]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.onrender.com',
